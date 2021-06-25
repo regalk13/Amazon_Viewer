@@ -1,6 +1,8 @@
 package com.regalk.amazonviewer;
 
-public class movie extends Film{
+import java.util.Date;
+
+public class movie extends Film implements IVisualizable{
 	
 	private int id;
 	private int timeViewed;
@@ -29,8 +31,20 @@ public class movie extends Film{
 				"\n Year:" + getYear() +
 				"\n Creator:" + getCreator() +
 				"\n Duration:" + getDuration();
-		//System.out.println("Genre:" + genre);
-		//System.out.println("Year:" + year);
+	}
+
+	@Override
+	public Date startToSee(Date dateI) {
+		return dateI;
+	}
+
+	@Override
+	public void stopToSee(Date dateI, Date dateF) {
+		if(dateF.getSeconds() > dateI.getSeconds()) {
+			setTimeViewed(dateF.getSeconds() - dateI.getSeconds());
+		}else {
+			setTimeViewed(0);
+		}
 	}
 	
 }
