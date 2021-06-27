@@ -1,5 +1,6 @@
 package com.regalk.amazonviewer;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class movie extends Film implements IVisualizable{
@@ -40,11 +41,21 @@ public class movie extends Film implements IVisualizable{
 
 	@Override
 	public void stopToSee(Date dateI, Date dateF) {
-		if(dateF.getSeconds() > dateI.getSeconds()) {
-			setTimeViewed(dateF.getSeconds() - dateI.getSeconds());
+		if(dateF.getTime() > dateI.getTime()) {
+			setTimeViewed((int)dateF.getTime() -(int)dateI.getTime());
 		}else {
 			setTimeViewed(0);
 		}
+	}
+	
+	public static ArrayList<movie> makeMoviesList(){
+		ArrayList<movie> movies = new ArrayList();
+		
+		for (int i = 1; i <= 5; i++) {
+			movies.add(new movie("Movie" + i, "Genre" + i, "Creator" + i, 120, (short)2017));
+		}
+		
+		return movies;
 	}
 	
 }

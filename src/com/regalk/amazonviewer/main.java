@@ -1,14 +1,13 @@
 package com.regalk.amazonviewer;
 import java.util.Date;
+import java.util.Scanner;
+
+import java.util.ArrayList;
 
 public class main {
 
 	public static void main(String[] args) {
-		
-		movie Movie = new movie("Coco", "Animation", "Pixar", 120, (short)2017);
-		Serie serie = new Serie("Breaking Bad", "Drugs", " ", 200, 5);
-		System.out.println(Movie);
-		System.out.println(serie);
+		showMenu();
 	}
 	
 	public static void showMenu() {
@@ -26,8 +25,8 @@ public class main {
 			System.out.println("0. Exit");
 			
 			//Read user input... 
-			
-			int key = 1;
+			Scanner sc = new Scanner(System.in);
+			int key = Integer.valueOf(sc.nextLine());
 			
 			switch(key) {
 			case 0:
@@ -58,11 +57,38 @@ public class main {
 	}
 	
 	public static void showMovies() {
-		int exit = 0;
+		int exit = 1;
+		ArrayList<movie> movies = movie.makeMoviesList();
 		do {
 			System.out.println();
 			System.out.println(":: Movies ::");
 			System.out.println();
+			for (int i = 0; i < movies.size(); i++) {
+				System.out.println(i+1 + ". " + movies.get(i).getTitle() + " Visto: " + movies.get(i).isViewed());
+			}
+			
+			System.out.println("0. Regresar al Menu");
+			System.out.println();
+			
+			Scanner sc = new Scanner(System.in);
+			int response = Integer.valueOf(sc.nextLine());
+			
+			if(response == 0) {
+				showMenu();
+			}
+			movie movieSelected = movies.get(response-1);
+			movieSelected.setViewed(true);
+			Date dateI = movieSelected.startToSee(new Date());
+			
+			for (int i = 0; i < 10000; i++) {
+				System.out.println("..........");
+			}
+			
+			movieSelected.stopToSee(dateI, new Date());
+			System.out.println();
+			System.out.println("Viste: " + movieSelected);
+			System.out.println("Por: " + movieSelected.getTimeViewed() + "ms");
+			
 		}while(exit != 0);
 	}	
 	public static void showSeries() {
@@ -89,6 +115,8 @@ public class main {
 			System.out.println();
 		}while(exit != 0);
 	}
+	
+
 	public static void showMagazines() {
 		int exit = 0;
 		do {
