@@ -1,4 +1,4 @@
-package com.regalk.amazonviewer;
+package com.regalk.amazonviewer.model;
 
 public class Film {
 	private String title;

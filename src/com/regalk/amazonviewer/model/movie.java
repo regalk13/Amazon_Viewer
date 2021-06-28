@@ -1,4 +1,4 @@
-package com.regalk.amazonviewer;
+package com.regalk.amazonviewer.model;
 
 import java.util.ArrayList;
 import java.util.Date;
