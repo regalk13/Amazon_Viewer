@@ -1,2 +1,3 @@
-module amazonviewer {
+module amazonviewer.main {
+	requires MakeReport;
 }

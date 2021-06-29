@@ -1,6 +1,7 @@
 package com.regalk.amazonviewer.main;
 import java.util.Date;
 
+
 import java.util.Scanner;
 
 import com.regalk.amazonviewer.model.Chapter;
@@ -178,7 +179,7 @@ public class main {
 		}while(exit != 0);
 	}
 	public static void makeReport() {
-		
+		// Report report = new Report();
 	}
 	
 	public static void makeReport(Date date) {
