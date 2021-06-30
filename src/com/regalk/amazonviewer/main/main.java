@@ -4,6 +4,7 @@ import java.util.Date;
 
 import java.util.Scanner;
 
+import com.regalk.amazonviewer.model.Book;
 import com.regalk.amazonviewer.model.Chapter;
 import com.regalk.amazonviewer.model.Film;
 import com.regalk.amazonviewer.model.Report;
@@ -162,13 +163,38 @@ public class main {
 			}
 		}while(exit != 0);
 	}
+	static ArrayList<Book> books= Book.makeBookList();
 	public static void showBooks() {
-		int exit = 0;
+		int exit = 1;
 		do {
 			System.out.println();
-			System.out.println(":: Books ::");
+			System.out.println(":: BOOKS ::");
 			System.out.println();
-		}while(exit != 0);
+			
+			for (int i = 0; i < books.size(); i++) { //1. Book 1
+				System.out.println(i+1 + ". " + books.get(i).getTitle() + " Leído: " + books.get(i).isReaded());
+			}
+			
+			System.out.println("0. Regresar al Menu");
+			System.out.println();
+			
+			//Leer Respuesta usuario
+			
+			Scanner sc = new Scanner(System.in);
+			int response = Integer.valueOf(sc.nextLine());
+			
+			if(response == 0) {
+				exit = 0;
+				showMenu();
+			}
+			
+			if(response > 0) {
+				Book bookSelected = books.get(response-1);
+				bookSelected.view();
+				
+			}
+				
+			}while(exit != 0);
 	}
 	
 

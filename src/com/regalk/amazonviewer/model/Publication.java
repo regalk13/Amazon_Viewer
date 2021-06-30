@@ -3,22 +3,17 @@ package com.regalk.amazonviewer.model;
 import java.util.Date;
 
 public class Publication {
-	
 	private String title;
-	private String genre;
 	private Date edititionDate;
 	private String editorial;
 	private String[] authors;
 	
 	
-	
-	public Publication(String title, String genre, Date edititionDate, String editorial, String[] authors) {
+	public Publication(String title, Date edititionDate, String editorial) {
 		super();
 		this.title = title;
-		this.genre = genre;
 		this.edititionDate = edititionDate;
 		this.editorial = editorial;
-		this.authors = authors;
 	}
 
 
@@ -32,20 +27,6 @@ public class Publication {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-
-
-	public String getGenre() {
-		return genre;
-	}
-
-
-
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
-
-
 
 	public Date getEdititionDate() {
 		return edititionDate;
@@ -80,7 +61,5 @@ public class Publication {
 	public void setAuthors(String[] authors) {
 		this.authors = authors;
 	}
-	
-	
 	
 }
