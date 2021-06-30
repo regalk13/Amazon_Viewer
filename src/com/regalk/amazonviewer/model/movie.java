@@ -3,6 +3,12 @@ package com.regalk.amazonviewer.model;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Inherits of {@link Film}
+ * Implement of {@link IVisualizable} 
+ * **/
+
+
 public class movie extends Film implements IVisualizable{
 	
 	private int id;
@@ -33,12 +39,18 @@ public class movie extends Film implements IVisualizable{
 				"\n Creator:" + getCreator() +
 				"\n Duration:" + getDuration();
 	}
-
+	
+	/**
+	 * {@inheritDoc}
+	 * **/
 	@Override
 	public Date startToSee(Date dateI) {
 		return dateI;
 	}
-
+	
+	/**
+	 * {@inheritDoc}
+	 * **/
 	@Override
 	public void stopToSee(Date dateI, Date dateF) {
 		if(dateF.getTime() > dateI.getTime()) {
@@ -57,7 +69,10 @@ public class movie extends Film implements IVisualizable{
 		
 		return movies;
 	}
-
+	
+	/**
+	 * {@inheritDoc}
+	 * **/
 	@Override
 	public void view() {
 		setViewed(true);

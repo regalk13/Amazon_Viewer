@@ -13,9 +13,23 @@ import com.regalk.amazonviewer.model.movie;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+
+/** 
+ * <h1>AmazonViewer</h1>
+ * AmazonViewer is a program for see movies,series, books and magazines.
+ * And you can generate reports...
+ * <p>
+ * Exists some rules like all elements can be watch or read (Exception Magazines).
+ * 
+ * @author Regalk
+ * @version 1.1
+ * @since 2021
+ *   
+ * **/
+
 public class main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {	
 		showMenu();
 	}
 	

@@ -2,6 +2,11 @@ package com.regalk.amazonviewer.model;
 
 import java.util.ArrayList;
 
+/**
+ * Inherits of {@link movie}
+ * @see Film
+ * **/
+
 public class Chapter extends movie{
 	private int id;
 	private int sessionNumber;
@@ -22,7 +27,7 @@ public class Chapter extends movie{
 	public Serie getSerie() {
 		return serie;
 	}
-
+	
 	public void setSerie(Serie serie) {
 		this.serie = serie;
 	}

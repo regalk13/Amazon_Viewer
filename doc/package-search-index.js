@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"m":"amazonviewer","l":"com.regalk.amazonviewer.main"},{"m":"amazonviewer","l":"com.regalk.amazonviewer.model"}]
