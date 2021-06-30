@@ -57,5 +57,21 @@ public class movie extends Film implements IVisualizable{
 		
 		return movies;
 	}
+
+	@Override
+	public void view() {
+		setViewed(true);
+		Date dateI = startToSee(new Date());
+		
+		for (int i = 0; i < 10000; i++) {
+			System.out.println("..........");
+		}
+		
+		stopToSee(dateI, new Date());
+		System.out.println();
+		System.out.println("Viste: " + toString());
+		System.out.println("Por: " + getTimeViewed() + "ms");
+		
+	}
 	
 }
