@@ -1,2 +1,2 @@
 # Amazon_Viewer
-Project Amazon Viewer on java SE
+Project Amazon Viewer on java SE.
