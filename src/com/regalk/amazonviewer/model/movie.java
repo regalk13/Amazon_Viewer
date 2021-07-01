@@ -1,6 +1,7 @@
 package com.regalk.amazonviewer.model;
 
 import java.util.ArrayList;
+import com.regalk.amazonviewer.dao.MovieDAO;
 import java.util.Date;
 
 /**
@@ -9,10 +10,18 @@ import java.util.Date;
  * **/
 
 
-public class movie extends Film implements IVisualizable{
+public class movie extends Film implements IVisualizable, MovieDAO{
 	
 	private int id;
 	private int timeViewed;
+	
+	public movie() {
+		
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	public movie(String title, String genre, String creator, int duration, short year) {
 		super(title, genre, creator, duration);
@@ -61,13 +70,9 @@ public class movie extends Film implements IVisualizable{
 	}
 	
 	public static ArrayList<movie> makeMoviesList(){
-		ArrayList<movie> movies = new ArrayList();
+		movie Movie = new movie();
 		
-		for (int i = 1; i <= 5; i++) {
-			movies.add(new movie("Movie" + i, "Genre" + i, "Creator" + i, 120, (short)2017));
-		}
-		
-		return movies;
+		return Movie.read();
 	}
 	
 	/**
@@ -76,8 +81,9 @@ public class movie extends Film implements IVisualizable{
 	@Override
 	public void view() {
 		setViewed(true);
+		movie Movie = new movie();
+		Movie.setMovieViewed(this);
 		Date dateI = startToSee(new Date());
-		
 		for (int i = 0; i < 10000; i++) {
 			System.out.println("..........");
 		}

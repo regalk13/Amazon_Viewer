@@ -80,7 +80,7 @@ public class main {
 		}while(exit != 0);
 		
 	}
-	static ArrayList<movie> movies;
+	static ArrayList<movie> movies = new ArrayList();
 	public static void showMovies() {
 		int exit = 1;
 		movies = movie.makeMoviesList();
