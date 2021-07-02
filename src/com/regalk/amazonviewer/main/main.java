@@ -3,6 +3,8 @@ import java.util.Date;
 
 
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Predicate;
 
 import com.regalk.amazonviewer.model.Book;
 import com.regalk.amazonviewer.model.Chapter;
@@ -88,9 +90,9 @@ public class main {
 			System.out.println();
 			System.out.println(":: Movies ::");
 			System.out.println();
-			for (int i = 0; i < movies.size(); i++) {
-				System.out.println(i+1 + ". " + movies.get(i).getTitle() + " Visto: " + movies.get(i).isViewed());
-			}
+			
+			AtomicInteger atomicInteger = new AtomicInteger(1); 
+			movies.forEach(m -> System.out.println(atomicInteger.getAndIncrement() + ". " +  m.getTitle() + " Visto: " + m.isViewed()));
 			
 			System.out.println("0. Regresar al Menu");
 			System.out.println();
@@ -211,14 +213,17 @@ public class main {
 		report.setNameFile("report");
 		report.setTitle(":: WHATCH ::");
 		report.setExtension("txt");
-		String contentReport = "";
+		StringBuilder contentReport = new StringBuilder();
 		
-		for (movie Movie : movies) {
-			if(Movie.getIsViewed()) {
-				contentReport += Movie.toString() + "/n";
-			}
-		}
-		report.setContent(contentReport);
+		movies.stream()
+		.filter(m -> m.getIsViewed())
+		.forEach(m -> contentReport.append(m.toString() + "\n"));
+		
+		//Predicate<Serie> seriesViewed = s -> s.getIsViewed();
+		series.stream().forEach(null);
+		
+		
+		report.setContent(contentReport.toString());
 		report.makeReport();
 		
 	}

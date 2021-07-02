@@ -1,0 +1,24 @@
+
+ Title:Coco
+ Genre:Animación
+ Year:2017
+ Creator:Pixart
+ Duration:120
+
+ Title:Titanic
+ Genre:Drama
+ Year:1997
+ Creator:James Cameron
+ Duration:195
+
+ Title:Avatar
+ Genre:Ficción
+ Year:2009
+ Creator:James Cameron
+ Duration:161
+
+ Title:Sombra del Agua
+ Genre:Drama-Fantasía
+ Year:2017
+ Creator:Guillermo del Toro
+ Duration:123
