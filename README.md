@@ -1,7 +1,8 @@
 
 # Amazon Viewer
 
-Amazon Viewer is a personal project to learn basic Java and more advanced things
+Amazon Viewer is a personal project to learn basic Java and more advanced things.
+(Not to be serious I just wanted to put all my java knowledge in a repo).
 
 ## Installation
 
